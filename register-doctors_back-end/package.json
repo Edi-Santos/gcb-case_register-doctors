@@ -1,0 +1,12 @@
+{
+  "name": "register-doctors_back-end",
+  "version": "1.0.0",
+  "description": "Desafio recebido da GCB Investimentos",
+  "main": "./src/api/server.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edimar dos Santos Resende",
+  "license": "ISC"
+}

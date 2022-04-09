@@ -26,16 +26,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      specialty_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        onUpdated: 'CASCADE',
-        onDelete: 'CASCADE',
-        references: {
-          model: 'specialties',
-          key: 'id'
-        },
-      },
     });
   },
   async down(queryInterface, Sequelize) {

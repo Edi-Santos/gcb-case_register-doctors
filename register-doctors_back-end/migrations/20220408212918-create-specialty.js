@@ -9,7 +9,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       specialty: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
     });
   },

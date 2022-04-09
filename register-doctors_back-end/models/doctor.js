@@ -8,10 +8,15 @@ const Doctor = (sequelize, DataTypes) => {
       CEP: DataTypes.NUMBER,
       // eslint-disable-next-line camelcase
       specialty_id: DataTypes.NUMBER,
-    }, {
-      timestamps: false,
-    },
+    }, { timestamps: false },
   );
+
+  doctor.associate = (models) => {
+    doctor.hasMany(models.Specialty, {
+      foreignKey: 'specialty_id',
+      as: 'specialty',
+    });
+  };
 
   return doctor;
 };

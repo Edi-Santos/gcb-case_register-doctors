@@ -1,6 +1,6 @@
 const Specialty = (sequelize, DataTypes) => {
   const specialty = sequelize.define(
-    'Specialty', {
+    'specialty', {
       specialty: DataTypes.STRING,
     }, {
       timestamps: false,
@@ -8,7 +8,7 @@ const Specialty = (sequelize, DataTypes) => {
   );
 
   specialty.associate = (models) => {
-    specialty.belongsTo(models.Doctor, {
+    specialty.belongsTo(models.doctor, {
       foreignKey: 'specialty_id',
       as: 'doctor',
     });

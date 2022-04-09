@@ -1,6 +1,6 @@
 const Doctor = (sequelize, DataTypes) => {
   const doctor = sequelize.define(
-    'Doctor', {
+    'doctor', {
       name: DataTypes.STRING,
       CRM: DataTypes.NUMBER,
       telephone: DataTypes.NUMBER,
@@ -12,7 +12,7 @@ const Doctor = (sequelize, DataTypes) => {
   );
 
   doctor.associate = (models) => {
-    doctor.hasMany(models.Specialty, {
+    doctor.hasMany(models.specialty, {
       foreignKey: 'specialty_id',
       as: 'specialty',
     });

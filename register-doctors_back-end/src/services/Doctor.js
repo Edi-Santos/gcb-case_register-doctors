@@ -26,10 +26,21 @@ const updateDoctor = async (id, doctorDatas) => {
   const { name, CRM, telephone, cellphone, CEP } = doctorDatas;
 
   try {
-    await doctor.update(
+    const { error } = validation.validate(doctorDatas);
+
+    if (error) {
+      const { message } = error.details;
+      return { status: 400, message };
+    }
+
+    const [updateDoc] = await doctor.update(
       { name, CRM, telephone, cellphone, CEP },
       { where: { id } },
     );
+
+    if (!updateDoc) return { status: 404, message: 'id not found' };
+
+    return true;
   } catch (error) {
     console.log(`Erro no Service || ${error.message}`);
   }

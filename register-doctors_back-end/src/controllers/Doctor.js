@@ -23,9 +23,15 @@ const updateDoctor = async (req, res) => {
   const doctorDatas = req.body;
 
   try {
-    await Doctor.updateDoctor(id, doctorDatas);
+    const updateDoc = await Doctor.updateDoctor(id, doctorDatas);
 
-    return res.status(200).json({ message: 'info doctor updated' });
+    if (updateDoc.message) {
+      const { status, message } = updateDoc;
+
+      return res.status(status).json({ message });
+    }
+
+    return res.status(200).json({ message: 'infos doctor updated' });
   } catch (error) {
     console.log(`Erro no Controller || ${error.message}`);
   }

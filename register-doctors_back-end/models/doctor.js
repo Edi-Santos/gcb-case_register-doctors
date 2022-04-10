@@ -7,8 +7,6 @@ const Doctor = (sequelize, DataTypes) => {
       telephone: DataTypes.NUMBER,
       cellphone: DataTypes.NUMBER,
       CEP: DataTypes.NUMBER,
-      // eslint-disable-next-line camelcase
-      specialty_id: DataTypes.NUMBER,
     }, { timestamps: false },
   );
 

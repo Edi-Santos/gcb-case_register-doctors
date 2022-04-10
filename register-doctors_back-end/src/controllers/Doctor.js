@@ -43,6 +43,12 @@ const selectADoctor = async (req, res) => {
   try {
     const getDoctor = await Doctor.selectADoctor(id);
 
+    if (getDoctor.message) {
+      const { status, message } = getDoctor;
+
+      return res.status(status).json({ message });
+    }
+
     return res.status(200).json({ getDoctor });
   } catch (error) {
     console.log(`Erro no Controller || ${error.message}`);

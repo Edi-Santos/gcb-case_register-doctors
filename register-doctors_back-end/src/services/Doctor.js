@@ -50,6 +50,8 @@ const selectADoctor = async (id) => {
   try {
     const getDoctor = await doctor.findOne({ where: { id } });
 
+    if (getDoctor === null) return { status: 404, message: 'id not found' };
+
     return getDoctor;
   } catch (error) {
     console.log(`Erro no Service || ${error.message}`);

@@ -22,6 +22,20 @@ const insertDoctor = async (doctorDatas) => {
   }
 };
 
+const updateDoctor = async (id, doctorDatas) => {
+  const { name, CRM, telephone, cellphone, CEP } = doctorDatas;
+
+  try {
+    await doctor.update(
+      { name, CRM, telephone, cellphone, CEP },
+      { where: { id } },
+    );
+  } catch (error) {
+    console.log(`Erro no Service || ${error.message}`);
+  }
+};
+
 module.exports = {
   insertDoctor,
+  updateDoctor,
 };

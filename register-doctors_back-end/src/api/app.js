@@ -6,5 +6,6 @@ const app = express();
 app.use(express.json());
 
 app.post('/doctor', Doctor.insertDoctor);
+app.put('/doctor/:id', Doctor.updateDoctor);
 
 module.exports = app;

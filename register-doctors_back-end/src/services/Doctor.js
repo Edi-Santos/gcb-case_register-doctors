@@ -38,7 +38,7 @@ const updateDoctor = async (id, doctorDatas) => {
       { where: { id } },
     );
 
-    if (!updateDoc) return { status: 404, message: 'id not found' };
+    if (!updateDoc) return { status: 401, message: 'not updated' };
 
     return true;
   } catch (error) {

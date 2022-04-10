@@ -7,13 +7,6 @@ const Specialty = (sequelize, DataTypes) => {
       timestamps: false,
     },
   );
-
-  specialty.associate = (models) => {
-    specialty.belongsTo(models.doctor, {
-      foreignKey: 'specialty_id',
-      as: 'doctor',
-    });
-  };
   
   return specialty;
 };

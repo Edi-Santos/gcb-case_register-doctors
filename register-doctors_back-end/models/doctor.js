@@ -12,13 +12,6 @@ const Doctor = (sequelize, DataTypes) => {
     }, { timestamps: false },
   );
 
-  doctor.associate = (models) => {
-    doctor.hasMany(models.specialty, {
-      foreignKey: 'specialty_id',
-      as: 'specialty',
-    });
-  };
-
   return doctor;
 };
 

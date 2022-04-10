@@ -58,8 +58,19 @@ const selectADoctor = async (id) => {
   }
 };
 
+const getAllDoctors = async () => {
+  try {
+    const doctors = await doctor.findAll();
+
+    return doctors;
+  } catch (error) {
+    console.log(`Erro no Service || ${error.message}`);
+  }
+};
+
 module.exports = {
   insertDoctor,
   updateDoctor,
   selectADoctor,
+  getAllDoctors,
 };

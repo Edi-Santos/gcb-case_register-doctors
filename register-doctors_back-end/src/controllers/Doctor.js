@@ -55,8 +55,19 @@ const selectADoctor = async (req, res) => {
   }
 };
 
+const getAllDoctors = async (_req, res) => {
+  try {
+    const doctors = await Doctor.getAllDoctors();
+
+    return res.status(200).json({ doctors });
+  } catch (error) {
+    console.log(`Erro no Controller || ${error.message}`);
+  }
+};
+
 module.exports = {
   insertDoctor,
   updateDoctor,
   selectADoctor,
+  getAllDoctors,
 };

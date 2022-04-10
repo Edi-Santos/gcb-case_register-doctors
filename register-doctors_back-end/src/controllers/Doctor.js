@@ -37,7 +37,20 @@ const updateDoctor = async (req, res) => {
   }
 };
 
+const selectADoctor = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const getDoctor = await Doctor.selectADoctor(id);
+
+    return res.status(200).json({ getDoctor });
+  } catch (error) {
+    console.log(`Erro no Controller || ${error.message}`);
+  }
+};
+
 module.exports = {
   insertDoctor,
   updateDoctor,
+  selectADoctor,
 };

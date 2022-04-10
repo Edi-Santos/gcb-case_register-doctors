@@ -1,8 +1,20 @@
 const { doctor } = require('../../models');
+const validation = require('../validations/insertDoctorSchema');
 
 const insertDoctor = async (doctorDatas) => {
+  const { name, CRM, telephone, cellphone, CEP } = doctorDatas;
+
   try {
-    const newDoctor = await doctor.create(doctorDatas);
+    const { error } = validation.validate(doctorDatas);
+
+    if (error) {
+      const { message } = error.details[0];
+      return { status: 400, message };
+    }
+
+    const newDoctor = await doctor.create(
+      { name, CRM, telephone, cellphone, CEP },
+    );
 
     return newDoctor;
   } catch (error) {

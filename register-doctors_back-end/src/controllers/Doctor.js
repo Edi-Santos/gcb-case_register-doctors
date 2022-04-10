@@ -6,6 +6,12 @@ const insertDoctor = async (req, res) => {
   try {
     const newDoctor = await Doctor.insertDoctor(doctorDatas);
 
+    if (newDoctor.message) {
+      const { status, message } = newDoctor;
+
+      return res.status(status).json({ message });
+    }
+
     return res.status(201).json({ newDoctor });
   } catch (error) {
     console.log(`Erro no Controller || ${error.message}`);

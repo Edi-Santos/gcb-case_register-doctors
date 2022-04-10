@@ -50,8 +50,6 @@ const selectADoctor = async (id) => {
   try {
     const getDoctor = await doctor.findOne({ where: { id } });
 
-    console.log({ getDoctor });
-
     return getDoctor;
   } catch (error) {
     console.log(`Erro no Service || ${error.message}`);

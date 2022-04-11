@@ -1,4 +1,6 @@
 const { doctor } = require('../../models');
+
+// Importando validações
 const doctorDatasValid = require('../validations/spcifiedsValidations/doctorDatasValid');
 const selectADoctorValid = require('../validations/spcifiedsValidations/selectADoctorValid');
 const updateDoctorValid = require('../validations/spcifiedsValidations/updateDoctorValid');

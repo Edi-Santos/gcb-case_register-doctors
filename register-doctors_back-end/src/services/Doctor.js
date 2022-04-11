@@ -1,16 +1,13 @@
 const { doctor } = require('../../models');
-const validation = require('../validations/insertDoctorSchema');
+const insertDoctorValid = require('../validations/spcifiedsValidations/insertDoctorValid');
 
 const insertDoctor = async (doctorDatas) => {
   const { name, CRM, telephone, cellphone, CEP } = doctorDatas;
 
   try {
-    const { error } = validation.validate(doctorDatas);
+    const validating = insertDoctorValid(doctorDatas);
 
-    if (error) {
-      const { message } = error.details[0];
-      return { status: 400, message };
-    }
+    if (validating !== true) return validating;
 
     const newDoctor = await doctor.create(
       { name, CRM, telephone, cellphone, CEP },

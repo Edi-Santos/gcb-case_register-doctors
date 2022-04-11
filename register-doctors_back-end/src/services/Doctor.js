@@ -1,5 +1,6 @@
 const { doctor } = require('../../models');
 const doctorDatasValid = require('../validations/spcifiedsValidations/doctorDatasValid');
+const updateDoctorValid = require('../validations/spcifiedsValidations/updateDoctorValid');
 
 const insertDoctor = async (doctorDatas) => {
   const { name, CRM, telephone, cellphone, CEP } = doctorDatas;
@@ -23,19 +24,18 @@ const updateDoctor = async (id, doctorDatas) => {
   const { name, CRM, telephone, cellphone, CEP } = doctorDatas;
 
   try {
-    const { error } = validation.validate(doctorDatas);
+    const validating = doctorDatasValid(doctorDatas);
 
-    if (error) {
-      const { message } = error.details;
-      return { status: 400, message };
-    }
+    if (validating !== true) return validating;
 
     const [updateDoc] = await doctor.update(
       { name, CRM, telephone, cellphone, CEP },
       { where: { id } },
     );
 
-    if (!updateDoc) return { status: 401, message: 'not updated' };
+    const updateDocValid = updateDoctorValid(updateDoc);
+
+    if (updateDocValid.message) return updateDocValid;
 
     return true;
   } catch (error) {

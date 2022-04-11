@@ -36,7 +36,7 @@ const updateDoctor = async (id, doctorDatas) => {
 
     const updateDocValid = updateDoctorValid(updateDoc);
 
-    if (updateDocValid.message) return updateDocValid;
+    if (updateDocValid !== true) return updateDocValid;
 
     return true;
   } catch (error) {

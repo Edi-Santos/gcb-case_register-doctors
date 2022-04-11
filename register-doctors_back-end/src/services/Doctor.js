@@ -1,11 +1,11 @@
 const { doctor } = require('../../models');
-const insertDoctorValid = require('../validations/spcifiedsValidations/insertDoctorValid');
+const doctorDatasValid = require('../validations/spcifiedsValidations/doctorDatasValid');
 
 const insertDoctor = async (doctorDatas) => {
   const { name, CRM, telephone, cellphone, CEP } = doctorDatas;
 
   try {
-    const validating = insertDoctorValid(doctorDatas);
+    const validating = doctorDatasValid(doctorDatas);
 
     if (validating !== true) return validating;
 

@@ -1,6 +1,6 @@
 const validation = require('../insertDoctorSchema');
 
-const insertDoctorValid = (doctorDatas) => {
+const doctorDatasValid = (doctorDatas) => {
   const { error } = validation.validate(doctorDatas);
 
   if (error) {
@@ -11,4 +11,4 @@ const insertDoctorValid = (doctorDatas) => {
   return true;
 };
 
-module.exports = insertDoctorValid;
+module.exports = doctorDatasValid;

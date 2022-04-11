@@ -1,5 +1,6 @@
 const { doctor } = require('../../models');
 const doctorDatasValid = require('../validations/spcifiedsValidations/doctorDatasValid');
+const selectADoctorValid = require('../validations/spcifiedsValidations/selectADoctorValid');
 const updateDoctorValid = require('../validations/spcifiedsValidations/updateDoctorValid');
 
 const insertDoctor = async (doctorDatas) => {
@@ -47,7 +48,9 @@ const selectADoctor = async (id) => {
   try {
     const getDoctor = await doctor.findOne({ where: { id } });
 
-    if (getDoctor === null) return { status: 404, message: 'id not found' };
+    const validating = selectADoctorValid(getDoctor);
+
+    if (validating !== true) return validating;
 
     return getDoctor;
   } catch (error) {

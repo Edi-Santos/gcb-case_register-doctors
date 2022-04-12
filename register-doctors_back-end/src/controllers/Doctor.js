@@ -38,10 +38,10 @@ const updateDoctor = async (req, res) => {
 };
 
 const selectADoctorById = async (req, res) => {
-  const { id } = req.params;
+  const { key, value } = req.params;
 
   try {
-    const getDoctor = await Doctor.selectADoctorById(id);
+    const getDoctor = await Doctor.selectADoctorById(key, value);
 
     if (getDoctor.message) {
       const { status, message } = getDoctor;

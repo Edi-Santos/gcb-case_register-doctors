@@ -47,9 +47,11 @@ const updateDoctor = async (id, doctorDatas) => {
   }
 };
 
-const selectADoctorById = async (id) => {
+const selectADoctorById = async (key, value) => {
   try {
-    const getDoctor = await doctor.findOne({ where: { id } });
+    const getDoctor = await doctor.findOne({
+      where: { [key]: value },
+    });
 
     const validating = selectADoctorValid(getDoctor);
 

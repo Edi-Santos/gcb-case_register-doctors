@@ -9,6 +9,6 @@ app.post('/doctor', Doctor.insertDoctor);
 app.put('/doctor/:id', Doctor.updateDoctor);
 app.get('/doctor', Doctor.getAllDoctors);
 app.get('/doctor/search', Doctor.selectADoctorByName);
-app.get('/doctor/:key/:value', Doctor.selectADoctorById);
+app.get('/doctor/:key/:value', Doctor.selectADoctor);
 
 module.exports = app;

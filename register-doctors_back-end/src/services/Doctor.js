@@ -47,7 +47,7 @@ const updateDoctor = async (id, doctorDatas) => {
   }
 };
 
-const selectADoctorById = async (key, value) => {
+const selectADoctor = async (key, value) => {
   try {
     const getDoctor = await doctor.findOne({
       where: { [key]: value },
@@ -95,7 +95,7 @@ const getAllDoctors = async () => {
 module.exports = {
   insertDoctor,
   updateDoctor,
-  selectADoctorById,
+  selectADoctor,
   selectADoctorByName,
   getAllDoctors,
 };

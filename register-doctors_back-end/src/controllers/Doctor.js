@@ -37,11 +37,11 @@ const updateDoctor = async (req, res) => {
   }
 };
 
-const selectADoctorById = async (req, res) => {
+const selectADoctor = async (req, res) => {
   const { key, value } = req.params;
 
   try {
-    const getDoctor = await Doctor.selectADoctorById(key, value);
+    const getDoctor = await Doctor.selectADoctor(key, value);
 
     if (getDoctor.message) {
       const { status, message } = getDoctor;
@@ -86,7 +86,7 @@ const getAllDoctors = async (_req, res) => {
 module.exports = {
   insertDoctor,
   updateDoctor,
-  selectADoctorById,
+  selectADoctor,
   selectADoctorByName,
   getAllDoctors,
 };

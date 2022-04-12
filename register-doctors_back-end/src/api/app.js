@@ -8,6 +8,6 @@ app.use(express.json());
 app.post('/doctor', Doctor.insertDoctor);
 app.put('/doctor/:id', Doctor.updateDoctor);
 app.get('/doctor', Doctor.getAllDoctors);
-app.get('/doctor/:id', Doctor.selectADoctor);
+app.get('/doctor/:id', Doctor.selectADoctorById);
 
 module.exports = app;

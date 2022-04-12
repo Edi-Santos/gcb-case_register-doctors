@@ -1,8 +1,8 @@
 const notUpdated = { status: 401, message: 'not updated' };
 
-const idNotFound = { status: 404, message: 'id not found' };
+const doctorNotFound = { status: 404, message: 'doctor not found' };
 
 module.exports = {
   notUpdated,
-  idNotFound,
+  doctorNotFound,
 };

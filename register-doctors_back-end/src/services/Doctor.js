@@ -46,7 +46,7 @@ const updateDoctor = async (id, doctorDatas) => {
   }
 };
 
-const selectADoctor = async (id) => {
+const selectADoctorById = async (id) => {
   try {
     const getDoctor = await doctor.findOne({ where: { id } });
 
@@ -73,6 +73,6 @@ const getAllDoctors = async () => {
 module.exports = {
   insertDoctor,
   updateDoctor,
-  selectADoctor,
+  selectADoctorById,
   getAllDoctors,
 };

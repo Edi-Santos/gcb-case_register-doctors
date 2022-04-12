@@ -1,3 +1,4 @@
+const { Op } = require('sequelize');
 const { doctor } = require('../../models');
 
 // Importando validações
@@ -60,6 +61,25 @@ const selectADoctorById = async (id) => {
   }
 };
 
+const selectADoctorByName = async (name) => {
+  const search = `%${name}%`;
+  try {
+    const getDoctor = await doctor.findAll({ where: {
+      name: {
+        [Op.like]: search,
+      },
+     } });
+
+    const validating = selectADoctorValid(getDoctor);
+
+    if (validating !== true) return validating;
+
+    return getDoctor;
+  } catch (error) {
+    console.log(`Erro no Service || ${error.message}`);
+  }
+};
+
 const getAllDoctors = async () => {
   try {
     const doctors = await doctor.findAll();
@@ -74,5 +94,6 @@ module.exports = {
   insertDoctor,
   updateDoctor,
   selectADoctorById,
+  selectADoctorByName,
   getAllDoctors,
 };

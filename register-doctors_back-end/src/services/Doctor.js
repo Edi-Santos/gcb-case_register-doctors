@@ -7,7 +7,7 @@ const selectADoctorValid = require('../validations/spcifiedsValidations/selectAD
 const updateDoctorValid = require('../validations/spcifiedsValidations/updateDoctorValid');
 
 const insertDoctor = async (doctorDatas) => {
-  const { name, CRM, telephone, cellphone, CEP } = doctorDatas;
+  const { name, CRM, telephone, cellphone, CEP, active } = doctorDatas;
 
   try {
     const validating = doctorDatasValid(doctorDatas);
@@ -15,7 +15,7 @@ const insertDoctor = async (doctorDatas) => {
     if (validating !== true) return validating;
 
     const newDoctor = await doctor.create(
-      { name, CRM, telephone, cellphone, CEP },
+      { name, CRM, telephone, cellphone, CEP, active },
     );
 
     return newDoctor;
@@ -25,7 +25,7 @@ const insertDoctor = async (doctorDatas) => {
 };
 
 const updateDoctor = async (id, doctorDatas) => {
-  const { name, CRM, telephone, cellphone, CEP } = doctorDatas;
+  const { name, CRM, telephone, cellphone, CEP, active } = doctorDatas;
 
   try {
     const validating = doctorDatasValid(doctorDatas);
@@ -33,7 +33,7 @@ const updateDoctor = async (id, doctorDatas) => {
     if (validating !== true) return validating;
 
     const [updateDoc] = await doctor.update(
-      { name, CRM, telephone, cellphone, CEP },
+      { name, CRM, telephone, cellphone, CEP, active },
       { where: { id } },
     );
 

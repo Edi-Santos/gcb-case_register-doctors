@@ -8,4 +8,5 @@ module.exports = Joi.object({
   CEP: Joi.number().required(),
   // eslint-disable-next-line camelcase
   specialty_id: Joi.array().min(2).required(),
+  active: Joi.boolean().required(),
 });

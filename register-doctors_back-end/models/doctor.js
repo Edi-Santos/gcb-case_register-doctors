@@ -7,6 +7,7 @@ const Doctor = (sequelize, DataTypes) => {
       telephone: DataTypes.NUMBER,
       cellphone: DataTypes.NUMBER,
       CEP: DataTypes.NUMBER,
+      active: DataTypes.BOOLEAN,
     }, { timestamps: false },
   );
 

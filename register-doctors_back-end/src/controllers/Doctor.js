@@ -83,10 +83,24 @@ const getAllDoctors = async (_req, res) => {
   }
 };
 
+const softDeleteDoctor = async (req, res) => {
+  const { id } = req.params;
+  const { active } = req.body;
+
+  try {
+    await Doctor.softDeleteDoctor(id, active);
+
+    return res.status(200).json({ message: 'successfully deactivated' });
+  } catch (error) {
+    console.log(`Erro no Controller || ${error.message}`);
+  }
+};
+
 module.exports = {
   insertDoctor,
   updateDoctor,
   selectADoctor,
   selectADoctorByName,
   getAllDoctors,
+  softDeleteDoctor,
 };

@@ -92,10 +92,24 @@ const getAllDoctors = async () => {
   }
 };
 
+const softDeleteDoctor = async (id, active) => {
+  try {
+    const deleteDoctor = await doctor.update(
+      { active },
+      { where: { id } },
+    );
+
+    return deleteDoctor;
+  } catch (error) {
+    console.log(`Erro no Service || ${error.message}`);
+  }
+};
+
 module.exports = {
   insertDoctor,
   updateDoctor,
   selectADoctor,
   selectADoctorByName,
   getAllDoctors,
+  softDeleteDoctor,
 };

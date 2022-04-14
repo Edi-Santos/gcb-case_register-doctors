@@ -88,7 +88,13 @@ const softDeleteDoctor = async (req, res) => {
   const { active } = req.body;
 
   try {
-    await Doctor.softDeleteDoctor(id, active);
+    const deleteDoctor = await Doctor.softDeleteDoctor(id, active);
+
+    if (deleteDoctor.message) {
+      const { status, message } = deleteDoctor;
+
+      return res.status(status).json({ message });
+    }
 
     return res.status(200).json({ message: 'successfully deactivated' });
   } catch (error) {

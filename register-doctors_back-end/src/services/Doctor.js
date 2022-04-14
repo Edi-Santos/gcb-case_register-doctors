@@ -94,12 +94,16 @@ const getAllDoctors = async () => {
 
 const softDeleteDoctor = async (id, active) => {
   try {
-    const deleteDoctor = await doctor.update(
+    const [deleteDoctor] = await doctor.update(
       { active },
       { where: { id } },
     );
 
-    return deleteDoctor;
+    const validating = updateDoctorValid(deleteDoctor);
+
+    if (validating !== true) return validating;
+
+    return true;
   } catch (error) {
     console.log(`Erro no Service || ${error.message}`);
   }

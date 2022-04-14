@@ -37,6 +37,6 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-trybe-frontend": "^1.2.3"
+    "eslint-config-trybe-frontend": "^1.2.1"
   }
 }

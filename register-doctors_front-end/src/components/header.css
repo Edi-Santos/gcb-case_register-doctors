@@ -1,11 +1,11 @@
 header {
   background-color: #27ff97;
+  box-shadow: 0 5px 20px #00000094;
   color: #693c3cbf;
   padding-bottom: 5%;
   padding-top: 5%;
   text-align: center;
   text-shadow: 5px 5px 15px #00000094;
-  box-shadow: 0 5px 20px #00000094;
 }
 
 @media only screen and ( max-width : 360px ) {

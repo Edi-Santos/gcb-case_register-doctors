@@ -27,7 +27,7 @@ function Body() {
   return (
     <form>
       <Name name={ inputs.name } handleChange={ handleChange } />
-      <CRM />
+      <CRM crm={ inputs.CRM } handleChange={ handleChange } />
       <Telephone />
       <CellPhone />
       <CEP />

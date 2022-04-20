@@ -9,19 +9,20 @@ import Telephone from './inputs/Telephone';
 function Body() {
   const [inputs, setInputs] = useState({
     name: '',
-    CRM: 0,
-    telephone: 0,
-    cellPhone: 0,
-    CEP: 0,
+    CRM: '',
+    telephone: '',
+    cellPhone: '',
+    CEP: '',
   });
 
   const handleChange = ({ target }) => {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
 
-    setInputs({
+    setInputs((prevState) => ({
+      ...prevState,
       [name]: value,
-    });
+    }));
   };
 
   return (

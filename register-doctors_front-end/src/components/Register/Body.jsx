@@ -29,7 +29,7 @@ function Body() {
     <form>
       <Name name={ inputs.name } handleChange={ handleChange } />
       <CRM crm={ inputs.CRM } handleChange={ handleChange } />
-      <Telephone />
+      <Telephone telephone={ inputs.telephone } handleChange={ handleChange } />
       <CellPhone />
       <CEP />
     </form>

@@ -31,7 +31,7 @@ function Body() {
       <CRM crm={ inputs.CRM } handleChange={ handleChange } />
       <Telephone telephone={ inputs.telephone } handleChange={ handleChange } />
       <CellPhone cellPhone={ inputs.cellPhone } handleChange={ handleChange } />
-      <CEP />
+      <CEP cep={ inputs.CEP } handleChange={ handleChange } />
     </form>
   );
 }

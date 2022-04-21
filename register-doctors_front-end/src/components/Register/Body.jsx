@@ -6,6 +6,7 @@ import CEP from './inputs/CEP';
 import CRM from './inputs/CRM';
 import Name from './inputs/Name';
 import Telephone from './inputs/Telephone';
+import Address from './inputs/Address';
 
 function Body() {
   const [inputs, setInputs] = useState({
@@ -56,6 +57,7 @@ function Body() {
       <Telephone telephone={ inputs.telephone } handleChange={ handleChange } />
       <CellPhone cellPhone={ inputs.cellPhone } handleChange={ handleChange } />
       <CEP cep={ inputs.CEP } handleChange={ handleChange } onblur={ onblur } />
+      <Address address={ address } />
     </form>
   );
 }

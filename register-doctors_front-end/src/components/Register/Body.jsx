@@ -8,6 +8,8 @@ import Name from './inputs/Name';
 import Telephone from './inputs/Telephone';
 import Address from './inputs/Address';
 
+import './body.css';
+
 function Body() {
   const [inputs, setInputs] = useState({
     name: '',

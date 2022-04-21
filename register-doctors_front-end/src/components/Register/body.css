@@ -8,11 +8,16 @@ form {
   font-size: 22px;
   margin: 10vh 20vw;
   padding: 5vh 0;
+}
 
-  /* justify-content: center; */
+h3 {
+  color: #693c3cbf;
+  margin-bottom: 3vh;
+  text-align: center;
 }
 
 label {
+  color: rgba(0, 0, 0, 0.75);
   margin-bottom: 10px;
   width: 70%;
 }
@@ -35,6 +40,7 @@ input {
 
   label {
     margin-bottom: 10px;
+    width: 100%;
   }
 
   input {

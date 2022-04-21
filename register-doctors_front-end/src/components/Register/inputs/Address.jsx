@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Address({ address }) {
+function Address({ address, onChange }) {
   const { UF = '', locality = '', district = '', street = '' } = address;
 
   return (
@@ -13,6 +13,7 @@ function Address({ address }) {
           type="text"
           name="UF"
           value={ UF }
+          onChange={ onChange }
           placeholder="UF..."
         />
       </label>
@@ -23,6 +24,7 @@ function Address({ address }) {
           type="text"
           name="locality"
           value={ locality }
+          onChange={ onChange }
           placeholder="Localidade..."
         />
       </label>
@@ -33,6 +35,7 @@ function Address({ address }) {
           type="text"
           name="district"
           value={ district }
+          onChange={ onChange }
           placeholder="Bairro..."
         />
       </label>
@@ -43,6 +46,7 @@ function Address({ address }) {
           type="text"
           name="street"
           value={ street }
+          onChange={ onChange }
           placeholder="Logradouro..."
         />
       </label>
@@ -57,6 +61,7 @@ Address.propTypes = {
     district: PropTypes.string.isRequired,
     street: PropTypes.string.isRequired,
   }).isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default Address;

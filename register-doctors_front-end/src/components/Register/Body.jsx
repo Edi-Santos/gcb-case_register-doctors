@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import request from '../../services/requestToCEP';
 
 import CellPhone from './inputs/CellPhone';
 import CEP from './inputs/CEP';
@@ -15,6 +16,13 @@ function Body() {
     CEP: '',
   });
 
+  const [address, setAddress] = useState({
+    UF: '',
+    locality: '',
+    district: '',
+    street: '',
+  });
+
   const handleChange = ({ target }) => {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -25,13 +33,29 @@ function Body() {
     }));
   };
 
+  const onblur = async () => {
+    const url = `https://viacep.com.br/ws/${inputs.CEP}/json/`;
+    const req = await request(url);
+
+    if (req) {
+      const { uf, localidade, bairro, logradouro } = req;
+
+      setAddress({
+        UF: uf,
+        locality: localidade,
+        district: bairro,
+        street: logradouro,
+      });
+    }
+  };
+
   return (
     <form>
       <Name name={ inputs.name } handleChange={ handleChange } />
       <CRM crm={ inputs.CRM } handleChange={ handleChange } />
       <Telephone telephone={ inputs.telephone } handleChange={ handleChange } />
       <CellPhone cellPhone={ inputs.cellPhone } handleChange={ handleChange } />
-      <CEP cep={ inputs.CEP } handleChange={ handleChange } />
+      <CEP cep={ inputs.CEP } handleChange={ handleChange } onblur={ onblur } />
     </form>
   );
 }

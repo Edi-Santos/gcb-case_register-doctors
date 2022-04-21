@@ -64,6 +64,7 @@ function Body() {
 
   return (
     <form>
+      <h3>Cadastrar novo médico</h3>
       <Name name={ inputs.name } handleChange={ handleChange } />
       <CRM crm={ inputs.CRM } handleChange={ handleChange } />
       <Telephone telephone={ inputs.telephone } handleChange={ handleChange } />

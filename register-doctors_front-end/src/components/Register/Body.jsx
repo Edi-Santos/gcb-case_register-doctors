@@ -34,6 +34,16 @@ function Body() {
     }));
   };
 
+  const addressChange = ({ target }) => {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+
+    setAddress((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
   const onblur = async () => {
     const url = `https://viacep.com.br/ws/${inputs.CEP}/json/`;
     const req = await request(url);
@@ -57,7 +67,7 @@ function Body() {
       <Telephone telephone={ inputs.telephone } handleChange={ handleChange } />
       <CellPhone cellPhone={ inputs.cellPhone } handleChange={ handleChange } />
       <CEP cep={ inputs.CEP } handleChange={ handleChange } onblur={ onblur } />
-      <Address address={ address } />
+      <Address address={ address } onChange={ addressChange } />
     </form>
   );
 }

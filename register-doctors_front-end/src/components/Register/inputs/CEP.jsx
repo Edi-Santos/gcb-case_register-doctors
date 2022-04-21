@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function CEP({ cep, handleChange }) {
+function CEP({ cep, handleChange, onblur }) {
   return (
     <label htmlFor="cep">
       CEP
@@ -11,6 +11,7 @@ function CEP({ cep, handleChange }) {
         name="CEP"
         value={ cep }
         onChange={ handleChange }
+        onBlur={ onblur }
         placeholder="CEP..."
       />
     </label>
@@ -20,6 +21,7 @@ function CEP({ cep, handleChange }) {
 CEP.propTypes = {
   cep: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
+  onblur: PropTypes.func.isRequired,
 };
 
 export default CEP;

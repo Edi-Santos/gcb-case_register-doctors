@@ -7,6 +7,8 @@ import CRM from './inputs/CRM';
 import Name from './inputs/Name';
 import Telephone from './inputs/Telephone';
 import Address from './inputs/Address';
+import BackToHome from './buttons/BackToHome';
+import ToRegister from './buttons/ToRegister';
 
 import './body.css';
 
@@ -71,6 +73,10 @@ function Body() {
       <CellPhone cellPhone={ inputs.cellPhone } handleChange={ handleChange } />
       <CEP cep={ inputs.CEP } handleChange={ handleChange } onblur={ onblur } />
       <Address address={ address } onChange={ addressChange } />
+      <div className="buttons">
+        <ToRegister />
+        <BackToHome />
+      </div>
     </form>
   );
 }

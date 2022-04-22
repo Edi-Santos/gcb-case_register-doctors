@@ -55,7 +55,7 @@ function Address({ address, onChange }) {
 }
 
 Address.propTypes = {
-  address: PropTypes.objectOf({
+  address: PropTypes.shape({
     UF: PropTypes.string.isRequired,
     locality: PropTypes.string.isRequired,
     district: PropTypes.string.isRequired,

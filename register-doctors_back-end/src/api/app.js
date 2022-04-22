@@ -1,9 +1,11 @@
 const express = require('express');
+const cors = require('cors');
 
 const Doctor = require('../controllers/Doctor');
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.post('/doctor', Doctor.insertDoctor);
 app.put('/doctor/:id', Doctor.updateDoctor);

@@ -1,0 +1,15 @@
+button {
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 1px 1px green;
+  padding: 2vh 1vw;
+}
+
+button:hover {
+  background-color: rgba(0, 128, 0, 0.8);
+  box-shadow: none;
+  color: aliceblue;
+  cursor: pointer;
+  transition: 0.6s;
+}

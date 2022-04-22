@@ -31,6 +31,13 @@ input {
   width: 100%;
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 5vh 0 0;
+  width: 70%;
+}
+
 @media only screen and ( max-width : 600px ) {
 
   form {
@@ -48,6 +55,10 @@ input {
     height: 3.5vh;
     margin: 5px 0;
     padding: 1px 5px;
+  }
+
+  .buttons {
+    width: 100%;
   }
 
 }

@@ -38,7 +38,7 @@ function ToRegister({ doctorDatas }) {
 }
 
 ToRegister.propTypes = {
-  doctorDatas: PropTypes.objectOf({}).isRequired,
+  doctorDatas: PropTypes.shape({}).isRequired,
 };
 
 export default ToRegister;

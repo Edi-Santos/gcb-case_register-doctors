@@ -74,7 +74,7 @@ function Body() {
       <CEP cep={ inputs.CEP } handleChange={ handleChange } onblur={ onblur } />
       <Address address={ address } onChange={ addressChange } />
       <div className="buttons">
-        <ToRegister />
+        <ToRegister doctorDatas={ inputs } />
         <BackToHome />
       </div>
     </form>

@@ -32,6 +32,7 @@ input {
 }
 
 .buttons {
+  align-items: center;
   display: flex;
   justify-content: space-between;
   margin: 5vh 0 0;

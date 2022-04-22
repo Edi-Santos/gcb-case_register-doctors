@@ -17,7 +17,7 @@ function Body() {
     name: '',
     CRM: '',
     telephone: '',
-    cellPhone: '',
+    cellphone: '',
     CEP: '',
   });
 
@@ -70,7 +70,7 @@ function Body() {
       <Name name={ inputs.name } handleChange={ handleChange } />
       <CRM crm={ inputs.CRM } handleChange={ handleChange } />
       <Telephone telephone={ inputs.telephone } handleChange={ handleChange } />
-      <CellPhone cellPhone={ inputs.cellPhone } handleChange={ handleChange } />
+      <CellPhone cellPhone={ inputs.cellphone } handleChange={ handleChange } />
       <CEP cep={ inputs.CEP } handleChange={ handleChange } onblur={ onblur } />
       <Address address={ address } onChange={ addressChange } />
       <div className="buttons">

@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import request from '../../../services/requestToItselfAPI';
 
+import './toRegister.css';
+
 function ToRegister({ doctorDatas }) {
   const spec1 = 2;
   const spec2 = 3;

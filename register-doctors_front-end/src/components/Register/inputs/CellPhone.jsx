@@ -8,7 +8,7 @@ function CellPhone({ cellPhone, handleChange }) {
       <input
         id="cellphone"
         type="tel"
-        name="cellPhone"
+        name="cellphone"
         value={ cellPhone }
         onChange={ handleChange }
         placeholder="Celular..."

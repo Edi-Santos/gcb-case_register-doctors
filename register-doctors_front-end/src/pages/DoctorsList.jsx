@@ -1,9 +1,13 @@
 import React from 'react';
 import Header from '../components/Header';
+import Body from '../components/DoctorsList/Body';
 
 function DoctorsList() {
   return (
-    <Header />
+    <section>
+      <Header />
+      <Body />
+    </section>
   );
 }
 

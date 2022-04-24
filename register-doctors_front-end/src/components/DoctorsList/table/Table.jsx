@@ -27,8 +27,12 @@ function Table() {
 
   return (
     <table>
-      <Th />
-      <Td docs={ allDoctors } />
+      <thead>
+        <Th />
+      </thead>
+      <tbody>
+        <Td docs={ allDoctors } />
+      </tbody>
     </table>
   );
 }

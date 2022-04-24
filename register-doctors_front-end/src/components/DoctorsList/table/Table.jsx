@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import Th from './tableComponents/Th';
+import Td from './tableComponents/Td';
 
 import request from '../../../services/requestToItselfAPI';
 
@@ -27,6 +28,7 @@ function Table() {
   return (
     <table>
       <Th />
+      <Td docs={ allDoctors } />
     </table>
   );
 }

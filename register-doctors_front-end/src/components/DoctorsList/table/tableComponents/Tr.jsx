@@ -1,22 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-function Tr({ docs }) {
+function Tr() {
   return (
     <tr>
-      {
-        Object.keys(docs[0]).map((element, index) => (
-          <th key={ index }>
-            { element }
-          </th>
-        ))
-      }
+      <th>Nome</th>
+      <th>CRM</th>
+      <th>Telefone</th>
+      <th>Celular</th>
     </tr>
   );
 }
-
-Tr.propTypes = {
-  docs: PropTypes.shape([{}]).isRequired,
-};
 
 export default Tr;

@@ -20,8 +20,10 @@ function Td({ docs }) {
 }
 
 Td.propTypes = {
-  docs: PropTypes.shape(
-    PropTypes.shape({}),
+  docs: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.shape({}),
+    ]),
   ).isRequired,
 };
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import Tr from './tableComponents/Tr';
+import Th from './tableComponents/Th';
 
 import request from '../../../services/requestToItselfAPI';
 
@@ -26,7 +26,7 @@ function Table() {
 
   return (
     <table>
-      <Tr />
+      <Th />
     </table>
   );
 }

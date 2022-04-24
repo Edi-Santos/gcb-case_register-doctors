@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Tr() {
+function Th() {
   return (
     <tr>
       <th>Nome</th>
@@ -11,4 +11,4 @@ function Tr() {
   );
 }
 
-export default Tr;
+export default Th;

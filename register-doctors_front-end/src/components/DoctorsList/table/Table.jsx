@@ -26,7 +26,7 @@ function Table() {
 
   return (
     <table>
-      <Tr docs={ allDoctors } />
+      <Tr />
     </table>
   );
 }

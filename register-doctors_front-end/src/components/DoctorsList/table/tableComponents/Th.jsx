@@ -4,7 +4,7 @@ import './th.css';
 
 function Th() {
   return (
-    <tr>
+    <tr className="tr-th">
       <th>Nome</th>
       <th>CRM</th>
       <th>Telefone</th>

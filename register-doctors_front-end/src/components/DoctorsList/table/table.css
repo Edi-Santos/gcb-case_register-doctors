@@ -9,3 +9,13 @@ table {
   text-align: center;
   width: 70%;
 }
+
+thead {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+tbody {
+  margin: 5px 0 0;
+}

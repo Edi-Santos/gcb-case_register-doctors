@@ -7,8 +7,6 @@ function BodyCards() {
   const OPTIONS = [
     'Cadastrar Médico',
     'Listar Médicos',
-    'Atualizar Cadastro',
-    'Deletar Médico',
   ];
 
   return (

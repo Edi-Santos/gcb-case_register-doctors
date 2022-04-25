@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './th.css';
+
 function Th() {
   return (
     <tr>

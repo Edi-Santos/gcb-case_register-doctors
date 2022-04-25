@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './td.css';
+
 function Td({ docs }) {
   console.log(docs);
   return (

@@ -5,6 +5,8 @@ import Td from './tableComponents/Td';
 
 import request from '../../../services/requestToItselfAPI';
 
+import './table.css';
+
 function Table() {
   const [allDoctors, setAllDoctors] = useState([]);
 

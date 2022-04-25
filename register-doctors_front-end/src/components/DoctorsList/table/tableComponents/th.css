@@ -1,0 +1,8 @@
+tr {
+  width: 100%;
+}
+
+.tr-th {
+  display: flex;
+  justify-content: space-between;
+}
